@@ -3,6 +3,7 @@ package net.kaupenjoe.mccourse.block;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.kaupenjoe.mccourse.MCCourseMod;
+import net.kaupenjoe.mccourse.item.ModItemGroups;
 import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.item.BlockItem;
@@ -14,10 +15,10 @@ import net.minecraft.util.registry.Registry;
 public class ModBlocks {
 
     public static final Block ORICHALCUM_BLOCK = registerBlock("orichalcum_block",
-            new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()), ItemGroup.MISC);
+            new Block(FabricBlockSettings.of(Material.METAL).strength(6f).requiresTool()), ModItemGroups.COURSE);
 
     public static final Block ORICHALCUM_ORE = registerBlock("orichalcum_ore",
-            new Block(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool()), ItemGroup.MISC);
+            new Block(FabricBlockSettings.of(Material.STONE).strength(4.5f).requiresTool()), ModItemGroups.COURSE);
 
     private static Block registerBlock(String name, Block block, ItemGroup group){
         registerBlockItem(name, block, group);
