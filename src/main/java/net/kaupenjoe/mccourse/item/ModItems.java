@@ -3,6 +3,8 @@ package net.kaupenjoe.mccourse.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.kaupenjoe.mccourse.MCCourseMod;
 import net.kaupenjoe.mccourse.item.custom.DowsingRodItem;
+import net.minecraft.item.FoodComponent;
+import net.minecraft.item.FoodComponents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -20,6 +22,12 @@ public class ModItems {
             new Item(new FabricItemSettings().group(ModItemGroups.COURSE)));
 
     public static final Item DOWSING_ROD = registerItem("dowsing_rod",
+            new DowsingRodItem(new FabricItemSettings().group(ModItemGroups.COURSE).maxDamage(32)));
+
+    public static final Item ENCEBOLLADO = registerItem("encebollado",
+            new Item(new FabricItemSettings().group(ModItemGroups.COURSE).food(ModFoodComponents.ENCEBOLLADO)));
+
+    public static final Item COAL_SLIVER = registerItem("coal_sliver",
             new DowsingRodItem(new FabricItemSettings().group(ModItemGroups.COURSE).maxDamage(32)));
 
     private static Item registerItem(String name, Item item){

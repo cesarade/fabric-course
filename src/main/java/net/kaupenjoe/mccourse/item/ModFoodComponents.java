@@ -7,15 +7,13 @@ import net.minecraft.item.FoodComponent;
 
 public class ModFoodComponents {
 
-//    public static FoodComponent encebollado = new FoodComponent.Builder()
-//            .hunger(2)
-//            .saturationModifier(0.3f)
-//            .statusEffect(new StatusEffectInstance(StatusEffects.REGENERATION, 200), 1f)
-//            .build();
-
     public static FoodComponent ENCEBOLLADO = new FoodComponent.Builder()
             .hunger(2)
-            .saturationModifier(0.3f).build();
+            .saturationModifier(0.3f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.SPEED, 600),1f)
+            .statusEffect(new StatusEffectInstance(StatusEffects.JUMP_BOOST, 400),1f)
+            .snack()
+            .build();
 
 
 }
