@@ -4,21 +4,13 @@
   "item.mccourse.raw_orichalcum": "Raw Orichalcum",
   "item.mccourse.encebollado": "Encebollado",
   "item.mccourse.dowsing_rod": "Dowsing Rod",
-  "item.mccourse.coal_sliver": "Coal Sliver",
 
   "block.mccourse.orichalcum_block": "Orichalcum Block",
   "block.mccourse.raw_orichalcum_block": "Raw Orichalcum Block",
   "block.mccourse.orichalcum_ore": "Orichalcum Ore",
   "block.mccourse.deepslate_orichalcum_ore": "Depp Slate Orichalcum",
-  "block.mccourse.speedy_block": "Speedy Block",
-  "block.mccourse.barrel_block": "Barrel Block",
-  "block.mccourse.click_number_block": "Number Block",
-  "block.mccourse.orichalcum_stairs": "Orichalcum Stairs",
-  "block.mccourse.orichalcum_slab": "Orichalcum Slab",
 
   "itemGroup.mccourse.course": "My Course",
-  "item.mccourse.dowsing_rod.no_valuable":"No Valuables found!",
-  "item.mccourse.dowsing.tooltip.shift": "Right click to find valuables",
-  "item.mccourse.dowsing.tooltip": "Prees SHIFT for more information"
+  "item.mccourse.dowsing_rod.no_valuable":"No Valuables found!"
 }
 
