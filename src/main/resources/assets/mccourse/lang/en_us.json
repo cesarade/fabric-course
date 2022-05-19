@@ -9,8 +9,11 @@
   "block.mccourse.raw_orichalcum_block": "Raw Orichalcum Block",
   "block.mccourse.orichalcum_ore": "Orichalcum Ore",
   "block.mccourse.deepslate_orichalcum_ore": "Depp Slate Orichalcum",
+  "block.mccourse.add_block": "Add",
 
   "itemGroup.mccourse.course": "My Course",
-  "item.mccourse.dowsing_rod.no_valuable":"No Valuables found!"
+  "item.mccourse.dowsing_rod.no_valuable":"No Valuables found!",
+
+  "message.operation.number": "You'll finish the operation"
 }
 

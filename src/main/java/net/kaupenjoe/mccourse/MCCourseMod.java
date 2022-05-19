@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse;
 
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
+import net.fabricmc.fabric.api.event.player.UseBlockCallback;
 import net.fabricmc.fabric.api.event.player.UseItemCallback;
 import net.kaupenjoe.mccourse.block.ModBlocks;
 import net.kaupenjoe.mccourse.item.ModItems;
@@ -24,6 +25,11 @@ public class MCCourseMod implements ModInitializer {
 		ModBlocks.registerModBlock();
 
 		ModRegistries.registerModStuffs();
+
+		UseBlockCallback.EVENT.register((player, world, hand, hitResult) -> {
+
+			return ActionResult.PASS;
+		});
 
 		PlayerBlockBreakEvents.BEFORE.register((world, player, pos, state, blockEntity) -> {
 
