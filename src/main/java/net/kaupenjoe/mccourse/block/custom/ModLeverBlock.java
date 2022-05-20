@@ -25,7 +25,6 @@ public class ModLeverBlock extends LeverBlock {
         boolean powered = state.get(POWERED);
 
         if(!world.isClient){
-            System.out.println("FACE: " + state.get(FACE) + " FACING: " + state.get(FACING));
             if(!player.isCreative() && powered) {
                 player.sendMessage(new TranslatableText("message.operation.number"), false);
                 return ActionResult.PASS;
@@ -34,4 +33,5 @@ public class ModLeverBlock extends LeverBlock {
 
         return super.onUse(state, world, pos, player, hand, hit);
     }
+
 }

@@ -4,12 +4,15 @@
   "item.mccourse.raw_orichalcum": "Raw Orichalcum",
   "item.mccourse.encebollado": "Encebollado",
   "item.mccourse.dowsing_rod": "Dowsing Rod",
+  "item.mccourse.data_tablet": "Data Tablet",
 
   "block.mccourse.orichalcum_block": "Orichalcum Block",
   "block.mccourse.raw_orichalcum_block": "Raw Orichalcum Block",
   "block.mccourse.orichalcum_ore": "Orichalcum Ore",
   "block.mccourse.deepslate_orichalcum_ore": "Depp Slate Orichalcum",
   "block.mccourse.add_block": "Add",
+  "block.mccourse.click_number_block": "Number",
+  "block.mccourse.lever": "Operation Lever",
 
   "itemGroup.mccourse.course": "My Course",
   "item.mccourse.dowsing_rod.no_valuable":"No Valuables found!",

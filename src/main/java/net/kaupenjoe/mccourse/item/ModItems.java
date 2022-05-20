@@ -2,6 +2,7 @@ package net.kaupenjoe.mccourse.item;
 
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.kaupenjoe.mccourse.MCCourseMod;
+import net.kaupenjoe.mccourse.item.custom.DataTableItem;
 import net.kaupenjoe.mccourse.item.custom.DowsingRodItem;
 import net.minecraft.item.FoodComponent;
 import net.minecraft.item.FoodComponents;
@@ -29,6 +30,9 @@ public class ModItems {
 
     public static final Item COAL_SLIVER = registerItem("coal_sliver",
             new DowsingRodItem(new FabricItemSettings().group(ModItemGroups.COURSE).maxDamage(32)));
+
+    public static final Item DATA_TABLET = registerItem("data_tablet",
+            new DataTableItem(new FabricItemSettings().group(ModItemGroups.COURSE).maxCount(1)));
 
     private static Item registerItem(String name, Item item){
         return Registry.register(Registry.ITEM, new Identifier(MCCourseMod.MOD_ID, name), item);

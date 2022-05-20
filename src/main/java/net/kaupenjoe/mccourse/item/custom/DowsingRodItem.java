@@ -1,5 +1,7 @@
 package net.kaupenjoe.mccourse.item.custom;
 
+import net.kaupenjoe.mccourse.item.ModItems;
+import net.kaupenjoe.mccourse.util.InventoryUtil;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.gui.screen.Screen;
@@ -10,10 +12,13 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -43,6 +48,11 @@ public class DowsingRodItem extends Item {
                 if(isValuableBlock(blockBelow)){
                     outputValuableCoordinate(player, positionClicked, blockBelow);
                     foundBlock = true;
+
+                    if(InventoryUtil.hasPlayerStackInInventory(player, ModItems.DATA_TABLET)){
+                        addNbtToDataTablet(player, positionClicked.add(0,-i,0), blockBelow);
+                    }
+
                     break;
                 }
             }
@@ -51,7 +61,7 @@ public class DowsingRodItem extends Item {
                 player.sendMessage(new TranslatableText("item.mccourse.dowsing_rod.no_valuable"), false);
             }
 
-            player.sendMessage(new LiteralText(this.getMaxDamage() +""), false);
+//            player.sendMessage(new LiteralText(this.getMaxDamage() +""), false);
         }
 
         context.getStack().damage(1, context.getPlayer(),
@@ -59,6 +69,18 @@ public class DowsingRodItem extends Item {
 
 
         return super.useOnBlock(context);
+    }
+
+    public void addNbtToDataTablet(PlayerEntity player, BlockPos pos, Block blockBelow) {
+        ItemStack dataTablet = player.getInventory().getStack(
+                InventoryUtil.getFirstInvetoryIndex(player, ModItems.DATA_TABLET)
+        );
+
+        NbtCompound nbtData = new NbtCompound();
+        nbtData.putString("mccourse.last_ore", "Found " + blockBelow.asItem().getName().getString() + " at (" +
+                pos.getX() + ", " + pos.getY() + ", " + pos.getZ() + ")");
+
+        dataTablet.setNbt(nbtData);
     }
 
     @Override
@@ -82,4 +104,10 @@ public class DowsingRodItem extends Item {
                 block == Blocks.IRON_ORE;
     }
 
+//    @Override
+//    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+//        String name = user.getStackInHand(hand).getItem().asItem().getName().toString();
+//        user.sendMessage(new LiteralText("DowsingRodItem: " +name), false);
+//        return super.use(world, user, hand);
+//    }
 }
