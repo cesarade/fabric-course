@@ -2,6 +2,8 @@ package net.kaupenjoe.mccourse.block.custom;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeverBlock;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.texture.NativeImage;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.text.TranslatableText;
@@ -25,6 +27,8 @@ public class ModLeverBlock extends LeverBlock {
         boolean powered = state.get(POWERED);
 
         if(!world.isClient){
+            MinecraftClient client = MinecraftClient.getInstance();
+//            MinecraftClient.getInstance().
             if(!player.isCreative() && powered) {
                 player.sendMessage(new TranslatableText("message.operation.number"), false);
                 return ActionResult.PASS;

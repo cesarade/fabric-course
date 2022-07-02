@@ -48,6 +48,9 @@ public class ModBlocks {
     public static final Block ADD_BLOCK = registerBlock("add_block",
             new AddBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f).requiresTool()), ModItemGroups.COURSE);
 
+    public static final Block TURNIP_SEEDS = registerBlock("turnip_crop",
+            new AddBlock(FabricBlockSettings.of(Material.METAL).strength(3.0f).requiresTool()), ModItemGroups.COURSE);
+
 
 
 //    public static final Block ORICHALCUM_BUTTON = registerBlock("orichalcum_button",
